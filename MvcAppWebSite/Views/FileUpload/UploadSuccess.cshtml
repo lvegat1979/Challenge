@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "UploadSuccess";
+}
+
+<h2>File was uploaded successfully</h2>
+<p>Your file was uploaded to the server and is now ready to be processed.  To begin processing this file, click the "Process File" button below.
+</p>
+<button id="beginProcess" >Process File</button>
+<script type="text/javascript">
+    $(function () {
+        $("#beginProcess").click(BeginProcess);
+        function BeginProcess() {
+            window.open("/SomeController/ImportProcessing/Index?fileName=@ViewBag.FileName&type=@ViewBag.PType", "ProcessStatusWin", "width=400, height=250, status=0, toolbar=0,  scrollbars=0, resizable=0");
+            window.location = "/Department/Import/Index";
+        }
+    });
+</script>

@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Player With More Points";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                
+               
+            </p>
+        </div>
+    </section>
+}
+
+ <div>
+    <div style="float: left; width: 50%;">
+        <div>
+            <h1>Top Players</h1>
+            <ul id="items"/>
+        </div>
+
+        <div>
+            <input   type="button" value="Restart Data Base" onclick="restartInfo();" />
+        </div>
+
+    </div>
+        
+ <div style="float: left; width: 50%;">
+    <div>
+        <h1>Downloads</h1>
+        <ul>
+            <li><a href="~/downloads/challenge1.txt" download>Challenge1</a></li>
+            <li><a href="~/downloads/Challenge2.txt" download>Challenge2</a> </li>
+            <li><a href="~/downloads/Challenge3.txt" download>Challenge3</a> </li>
+            <li><a href="~/downloads/Tournament.txt" download>Tournament</a> </li>
+        </ul>
+    </div>
+    
+    <div>
+        <div>
+            <h1>UpLoad Challenge Manager</h1>
+        </div>
+            <form action="" method="post" enctype="multipart/form-data">
+                <label for="file">Filename:</label>
+                    <input type="file" name="file" id="file" />
+                    <input type="submit" name="Send" value = "Send"  />
+           </form>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.Title = "Documentation";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>@ViewBag.Message</h2>
+</hgroup>
+
+<article>
+    <p>
+       <H2> API Documentation</H2>
+    </p>
+
+    <p>
+        This a project developed for interview HP, consists in Paper-Rock-Scissors game.
+     </p>
+
+
+     <p>
+       <H2> End Points Development</H2>
+    </p>
+
+    <div  style="marker-offset: 300px; background-color: white;" id="logoScroll" >
+        <p>
+          <b>POST</b> www.lvegat.com/challenge/api/Championship/new 
+        </p>
+        <p>
+        Example:
+        </p>
+        <p>
+           Data = [["Armando","P"],["Dave","S"]]
+            </p>
+     </div>
+
+
+
+      <div  style="marker-offset: 300px; background-color: white;" id="logoScroll" >
+        <p>
+          <b>DELETE</b> www.lvegat.com/challenge/api/Championship/reset 
+        </p>
+        <p>
+        Example:
+        </p>
+        <p>
+           www.lvegat.com/challenge/api/Championship/Delete 
+            </p>
+     </div>
+
+      <div  style="marker-offset: 300px; background-color: white;" id="logoScroll" >
+        <p>
+          <b>POST</b> www.lvegat.com/challenge/api/Championship/result 
+        </p>
+        <p>
+        Example:
+        </p>
+        <p>
+           www.lvegat.com/challenge/api/Championship/result?first=Luis&second=Kimberlin
+         </p>
+     </div>
+     
+
+     <div  style="marker-offset: 300px; background-color: white;" id="logoScroll" >
+        <p>
+          <b>GET</b> http://www.lvegat.com/challenge/api/championship/top
+        </p>
+        <p>
+        Example:
+        </p>
+        <p>
+           http://www.lvegat.com/challenge/api/championship/top
+            </p>
+         <p>
+           http://www.lvegat.com/challenge/api/championship/top?count=2
+            </p>
+     </div>
+
+     <p>
+       <H2> About Language</H2>
+    </p>
+
+    <p>
+        I used .Net MVC 4 WebApi, to programing RestFul and WebClient. 
+        This Framework have Clean View Markup (no additional HTML emitted), Pluggable architecture, Full control over rendered HTML, 100% extendible,
+        Rich UI support (possible through client side JS libraries like jQuery UI and others), also is so Fast.
+       
+    </p>
+
+    <p>
+       <H2> GitHub Address.</H2>
+
+    </p>
+</article>
+
+<aside>
+    <!--
+    <h3>Aside Title</h3>
+    <p>
+        Use this area to provide additional information.
+    </p> -->
+    <ul>
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("About", "About", "Home")</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+        <li>@Html.ActionLink("Documentation", "Documentation", "Home")</li>
+    </ul>
+</aside>

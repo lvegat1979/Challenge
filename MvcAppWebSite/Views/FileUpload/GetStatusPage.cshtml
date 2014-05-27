@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "GetStatusPage";
+}
+<h2>Current Processing Status</h2>
+    <h5>Processing: @ViewBag.File</h5>
+    <h5>Updated: <span id="processUpdated"></span></h5>
+    <span id="message"></span>
+    <br />
+    <progress id="progressBar"></progress>
+<script type="text/javascript">
+    $(function () {
+        var checker = undefined;
+        GetStatus();
+        function GetStatus() {
+            if (checker == undefined) {
+                checker = setInterval(GetStatus, 3000);
+            }
+            $.ajax({
+                url: "GetStatus?fileName=@ViewBag.File",
+                type: "GET",
+                success: function (result) {
+                    result = result || {
+                        Available: false,
+                        Status: {
+                            TotalRecords: -1,
+                            CurrentRecord: -1,
+                            ElapsedTime: -1,
+                            Message: "No status data returned"
+                        }
+                    };
+                    if (result.Available == true) {
+                        $("#progressBar").attr({ max: result.Status.TotalRecords, value: result.Status.CurrentRecord });
+                        $("#processUpdated").text(result.Status.Updated);
+                        $("#message").text(result.Status.Message);
+                    } else {
+                        clearInterval(checker);
+                    }
+
+                },
+                error: function () {
+                    $("#statusWrap").html("<h3>Unable to load status checker</h3>");
+                    clearInterval(checker);
+                }
+            });
+        }
+    });
+</script>
